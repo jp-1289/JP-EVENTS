@@ -326,7 +326,7 @@
         }
         .js-enabled .reveal.active{
             opacity:1;
-            transform:translatrY(0);
+            transform:translateY(0);
         }
         .reveal.active{
             opacity:1;
@@ -442,6 +442,27 @@
                 font-size: 21px;
             }
         }
+        html, body{
+            width:100%;
+            overflow-x:hidden;
+        }
+        img{
+            max-width:100%;
+        }
+        @media (max-width: 768px){
+            .hero{
+                width:100%;
+                background-size:cover;
+                background-position:center;
+            }
+            .hero h1{
+                font-size:clamp(32px, 9vw, 45px);
+            }
+            .section-padding{
+                padding:50px 15px;
+            }
+            .navbar-nav{
+                align-items:stretch;
     </style>
 </head>
 <body>
@@ -477,7 +498,7 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 reveal">
-                    <img class="about-img" src="images/about_img.avif" alt="Luxury event decoration">
+                    <img class="about-img" src="./images/about_img.avif" alt="Luxury event decoration">
                 </div>
                 <div class="col-lg-6 reveal">
                     <p class="section-subtitle">ABOUT JP EVENTS</p>
@@ -500,7 +521,7 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="card service-card">
-                        <img src="images/marriage.avif" alt="wedding">
+                        <img src="./images/marriage.avif" alt="wedding">
                         <div class="card-body">
                             <h4>Wedding Events</h4>
                             <p class="description">Beautiful weddings, receptions and luxury decorations.</p>
@@ -510,7 +531,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="card service-card">
-                        <img src="images/birthday.avif" alt="Birthday">
+                        <img src="./images/birthday.avif" alt="Birthday">
                         <div class="card-body">
                             <h4>Birthday Parties</h4>
                             <p class="description">Creative birthday themes and unforgettable celebrations.</p>
@@ -520,7 +541,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="card service-card">
-                        <img src="images/corporate_img.avif" alt="Corporate">
+                        <img src="./images/corporate_img.avif" alt="Corporate">
                         <div class="card-body">
                             <h4>Corporate Events</h4>
                             <p class="description">Conferences, meetings, business events and launches.</p>
@@ -530,7 +551,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="card service-card">
-                        <img src="images/Traditional_event.avif" alt="Baby shower">
+                        <img src="./images/Traditional_event.avif" alt="Baby shower">
                         <div class="card-body">
                             <h4>Traditional Events</h4>
                             <p class="description">Baby showers, naming ceremonies and family functions.</p>
@@ -540,7 +561,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="card service-card">
-                        <img src="images/private party.avif" alt="Private Party">
+                        <img src="./images/private party.avif" alt="Private Party">
                         <div class="card-body">
                             <h4>Private Parties</h4>
                             <p class="description">Exclusive parties and personalized celebrations.</p>
@@ -598,22 +619,22 @@
             </div>
             <div class="row g-3">
                 <div class="col-md-4 gallery-item reveal">
-                    <img class="gallery-img" src="images/marriage.avif" alt="Wedding gallery" onclick="openImage(this)">
+                    <img class="gallery-img" src="./images/marriage.avif" alt="Wedding gallery" onclick="openImage(this)">
                 </div>
                 <div class="col-md-4 gallery-item reveal">
-                    <img class="gallery-img" src="images/about_img.avif" alt="Event gallery" onclick="openImage(this)">
+                    <img class="gallery-img" src="./images/about_img.avif" alt="Event gallery" onclick="openImage(this)">
                 </div>
                 <div class="col-md-4 gallery-item reveal">
-                    <img class="gallery-img" src="images/birthday.avif" alt="Birthday gallery" onclick="openImage(this)">
+                    <img class="gallery-img" src="./images/birthday.avif" alt="Birthday gallery" onclick="openImage(this)">
                 </div>
                 <div class="col-md-4 gallery-item reveal">
-                    <img class="gallery-img" src="images/party.avif" alt="Reception gallery" onclick="openImage(this)">
+                    <img class="gallery-img" src="./images/party.avif" alt="Reception gallery" onclick="openImage(this)">
                 </div>
                 <div class="col-md-4 gallery-item reveal">
-                    <img class="gallery-img" src="images/private party.avif" alt="Party gallery" onclick="openImage(this)">
+                    <img class="gallery-img" src="./images/private party.avif" alt="Party gallery" onclick="openImage(this)">
                 </div>
                 <div class="col-md-4 gallery-item reveal">
-                    <img class="gallery-img" src="images/corporate_img.avif" alt="Corporate gallery" onclick="openImage(this)">
+                    <img class="gallery-img" src="./images/corporate_img.avif" alt="Corporate gallery" onclick="openImage(this)">
                 </div>
             </div>
         </div>
