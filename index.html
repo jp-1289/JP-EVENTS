@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>JP EVENTS</title>
+    <meta name="description" content="JP Events Hyderabad-Luxury weddings, birthday parties, Corporate events and celebrations.">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            color:black;
+            background:white;
+        }
+        .navbar{
+            background:rgba(255, 255, 255, .97);
+            padding:15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,.06);
+        }
+        .navbar-brand{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:34px;
+            font-weight:700;
+            color:gold;
+            letter-spacing: 3px;
+        }
+        .navbar-toggler{
+            border:1px solid gold;
+            border-radius: 0;
+        }
+        .navbar-toggler:focus{
+            box-shadow: 0 0 0 0.15rem rgba(225,215,0,0.25);
+        }
+        .navbar-toggler-icon{
+            filter:none;
+        }
+        .nav-link{
+            color:#333;
+            font-size:13px;
+            font-weight:500;
+            margin:0 8px;
+            transition:0.3s;
+        }
+        .nav-link:hover{
+            color:gold;
+        }
+        .btn-gold{
+            background:gold;
+            color:white;
+            border:1px solid gold;
+            padding:12px 28px;
+            border-radius: 0;
+            transition:0.3s;
+        }
+        .btn-gold:hover{
+            background:darkgoldenrod;
+            color:white;
+            transform: translateY(-3px);
+        }
+        .btn-outline-gold:hover{
+            background:gold;
+            color:white;
+        }
+        .hero{
+            min-height:690px;
+            background:linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.42)),url('images/marriage.avif');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+        .hero-text{
+            max-width:850px;
+            margin:auto;
+            padding:100px 20px;
+        }
+        .hero h1{
+            font-size:75px;
+            font-weight: 600;
+            letter-spacing: 5px;
+        }
+        .hero p{
+            font-size:15px;
+            letter-spacing: 5px;
+            margin:20px 0 35px;
+        }
+        .hero-line{
+            height:2px;
+            width:90px;
+            background: gold;
+            margin:20px auto;
+        }
+        .section-padding{
+            padding:90px 0;
+        }
+        .section-title{
+            font-size:48px;
+            font-weight:600;
+            margin-bottom:15px;
+        }
+        .section-subtitle{
+            color:gold;
+            font-size:12px;
+            letter-spacing:4px;
+            font-weight:600;
+            margin-bottom:15px;
+        }
+        .gold-text{
+            color:gold;
+        }
+        .description{
+            color:#777;
+            line-height:1.9;
+            font-size:14px;
+        }
+        .about-img{
+            width:100%;
+            height:440px;
+            object-fit:cover;
+        }
+        .services-section{
+            background:#fdf8ef;
+        }
+        .service-card{
+            background:white;
+            border:none;
+            height:100%;
+            transition:0.4s;
+            overflow:hidden;
+            box-shadow:0 5px 25px rgba(0,0,0,0.04);
+        }
+        .service-card:hover{
+            transform:translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        .service-card img{
+            width:100%;
+            height:240px;
+            object-fit:cover;
+            transition:0.5s;
+        }
+        .service-card:hover img{
+            transform:scale(1.06);
+        }
+        .service-card .card-body{
+            padding:25px;
+        }
+        .service-card h4{
+            font-size:27px;
+        }
+        .why-icon{
+            width:65px;
+            height:65px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border:1px solid gold;
+            color:gold;
+            font-size:27px;
+            margin:auto auto 20px;
+        }
+        .why-card{
+            text-align:center;
+            padding:30px 15px;
+        }
+        .gallery-section{
+            background:#fdf8ef;
+        }
+        .gallery-img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+            cursor: pointer;
+            transition:0.4s;
+        }
+        .gallery-item{
+            overflow:hidden;
+            position:relative;
+        }
+        .gallery-item:hover img{
+            transform:scale(1.07);
+        }
+        .gallery-item img{
+            transition:0.5s;
+        }
+        .package-card{
+            border:1px solid #e7dfd0;
+            padding:35px 25px;
+            height:100%;
+            text-align:center;
+            transition:0.3s;
+        }
+        .package-card:hover{
+            border-color:gold;
+            box-shadow:0 10px 35px rgba(0,0,0,0.08);
+            transform:translateY(-5px);
+        }
+        .package-card h3{
+            font-size:30px;
+        }
+        .package-card ul{
+            list-style:none;
+            padding:0;
+            line-height:2.8;
+            color:#777;
+            font-size:14px;
+        }
+        .cta-section{
+            background:linear-gradient(rgba(10,17,13,0.72),rgba(20,17,13,0.72)),url("images/party.avif");
+            background-size:cover;
+            background-position:center;
+            color:white;
+            text-align:center;
+            padding:100px 20px;
+        }
+        .contact-section{
+            background:#fdf8ef;
+        }
+        .form-control, .form-select{
+            padding:14px;
+            border-radius:0;
+            border:1px solid #ddd;
+        }
+        .form-control:focus, .form-select:focus{
+            border-color:gold;
+            box-shadow:0 0 0 0.15rem rgba(184,149,82,0.15);
+        }
+        footer{
+            background:#211f1b;
+            color:#ddd;
+            padding:65px 0 20px;
+        }
+        footer h3{
+            color:gold;
+            font-size:32px;
+        }
+        footer h5{
+            color:gold;
+            font-size:18px;
+        }
+        footer a{
+            color:#ddd;
+            text-decoration:none;
+            display:inline-block;
+            margin-bottom:12px;
+            font-size:13px;
+        }
+        footer a:hover{
+            color:gold;
+        }
+        footer p{
+            font-size:14px;
+            line-height:1.8;
+        }
+        .footer-link{
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+        }
+        .footer-link a{
+            display:block;
+            color:#ddd;
+            text-decoration:none;
+            font-size:13px;
+            margin-bottom:12px;
+            transition:0.3s;
+        }
+        .footer-link a:hover{
+            color:gold;
+            padding-left: 5px;
+        }
+        .social-icon{
+            display:inline-flex;
+            width:38px;
+            height:38px;
+            justify-content: center;
+            align-items:center;
+            border:1px solid gold;
+            border-radius:50%;
+            margin-right:8px;
+            color:white;
+        }
+        .whatsapp-float{
+            position:fixed;
+            bottom:25px;
+            right:35px;
+            z-index:999;
+            background:#25d366;
+            color:white;
+            width:58px;
+            height:58px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            font-size:30px;
+            text-decoration:none;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+        }
+        .whatsapp-float:hover{
+            color:white;
+            transform:scale(1.1);
+        }
+        .reveal{
+            opacity:0;
+            visibility : visible;
+            transform:translateY(35px);
+            transition:opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.active{
+            opacity:1;
+            transform:translateY(0);
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+            .navbar-brand {
+                font-size: 24px;
+            }
+            .navbar-collapse {
+                padding-top: 15px;
+            }
+            .hero {
+                min-height: 500px;
+                padding: 30px 15px;
+                background-position: center;
+            }
+            .hero-text {
+                width: 100%;
+                padding: 40px 10px;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero h3 {
+                font-size: 21px;
+            }
+            .hero p {
+                font-size: 12px;
+                line-height: 1.8;
+            }
+            .hero .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            .section-padding {
+                padding: 50px 15px;
+            }
+            .section-title {
+                font-size: 30px;
+            }
+            .about-img {
+                width: 100%;
+                height: 280px;
+                object-fit: cover;
+            }
+            .service-card {
+                width: 100%;
+            }
+            .service-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+            }
+            .gallery-img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+            }
+            .package-card {
+                width: 100%;
+                padding: 25px 15px;
+            }
+            .cta-section {
+                padding: 60px 15px;
+            }
+            .cta-section h2 {
+                font-size: 32px;
+            }
+            .form-control,
+            .form-select {
+                width: 100%;
+            }
+            footer {
+                padding: 40px 20px;
+            }
+            .footer-link {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                right: 15px;
+                bottom: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero h3 {
+                font-size: 18px;
+            }
+            .section-title {
+                font-size: 26px;
+            }
+            .about-img {
+                height: 230px;
+            }
+            .gallery-img {
+                height: 190px;
+            }
+            .cta-section h2 {
+                font-size: 27px;
+            }
+            .navbar-brand {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">JP EVENTS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">GALLERY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">PACKAGES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                    <li class="nav-item ms-lg-3"><a href="#contact" class="btn btn-gold">PLAN YOUR EVENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <p class="section-subtitle text-white">WELCOME TO JP EVENTS</p>
+            <div class="hero-line"></div>
+            <h1>JP EVENTS</h1>
+            <h3 class="mt-3">Creating Memories That Last</h3>
+            <p>• WEDDINGS • CELEBRATION • CORPORATE • MORE</p>
+            <a href="#services" class="btn btn-gold me-2">EXPLORE SERVICES</a>
+            <a href="#contact" class="btn btn-outline-light rounded-0">BOOK YOUR EVENT</a>
+        </div>
+    </section>
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal">
+                    <img class="about-img" src="images/about_img.avif" alt="Luxury event decoration">
+                </div>
+                <div class="col-lg-6 reveal">
+                    <p class="section-subtitle">ABOUT JP EVENTS</p>
+                    <h2 class="section-title">Your Vision. <span class="gold-text">Our Creation</span></h2>
+                    <h4 class="mb-4">Every Event, An Experience.</h4>
+                    <p class="description">Welcome to JP EVENTS, your event management partner in Hyderabad. We believe every celebration deserves to be extraordinary. Our team focuses on creative concepts, elegant decorations, professional planning and memorable experiences.</p>
+                    <p class="description">From beautiful weddings to unforgettable birthday parties and professional Corporate events, we bring your ideas to life.</p>
+                    <a href="#contact" class="btn btn-gold mt-3">DISCUSS YOUR EVENT</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding services-section" id="services">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <p class="section-subtitle">WHAT WE OFFER</p>
+                <h2 class="section-title">Our <span class="gold-text">Services</span> </h2>
+                <p class="description">We make every occasion special with creative event planning.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="card service-card">
+                        <img src="images/marriage.avif" alt="wedding">
+                        <div class="card-body">
+                            <h4>Wedding Events</h4>
+                            <p class="description">Beautiful weddings, receptions and luxury decorations.</p>
+                            <a href="javascript:void(0)" onclick="sendServiceEnquiry('Wedding')" class="gold-text text-decoration-none">Plan Your Wedding →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="card service-card">
+                        <img src="images/birthday.avif" alt="Birthday">
+                        <div class="card-body">
+                            <h4>Birthday Parties</h4>
+                            <p class="description">Creative birthday themes and unforgettable celebrations.</p>
+                            <a href="javascript:void(0)" onclick="sendServiceEnquiry('Birthday Party')" class="gold-text text-decoration-none">Plan Birthday →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="card service-card">
+                        <img src="images/corporate_img.avif" alt="Corporate">
+                        <div class="card-body">
+                            <h4>Corporate Events</h4>
+                            <p class="description">Conferences, meetings, business events and launches.</p>
+                            <a href="javascript:void(0)" onclick="sendServiceEnquiry('Corporate Event')" class="gold-text text-decoration-none">Plan Corporate Event →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="card service-card">
+                        <img src="images/Traditional_event.avif" alt="Baby shower">
+                        <div class="card-body">
+                            <h4>Traditional Events</h4>
+                            <p class="description">Baby showers, naming ceremonies and family functions.</p>
+                            <a href="javascript:void(0)" onclick="sendServiceEnquiry('Traditional Function')" class="gold-text text-decoration-none">Plan Family Event →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="card service-card">
+                        <img src="images/private party.avif" alt="Private Party">
+                        <div class="card-body">
+                            <h4>Private Parties</h4>
+                            <p class="description">Exclusive parties and personalized celebrations.</p>
+                            <a href="javascript:void(0)" onclick="sendServiceEnquiry('Private Party')" class="gold-text text-decoration-none">Plan your Party →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <p class="section-subtitle">OUR PROMISE</p>
+                <h2 class="section-title">Why Choose<span class="gold-text"> JP EVENTS?</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-stars"></i></div>
+                        <h4>Creative Concepts</h4>
+                        <p class="description">Unique ideas for every occasion.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-wallet2"></i></div>
+                        <h4>Budget Friendly</h4>
+                        <p class="description">Planning around your budget.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-calendar-check"></i></div>
+                        <h4>Complete Planning</h4>
+                        <p class="description">From preparation to execution.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-heart"></i></div>
+                        <h4>Attention to Detail</h4>
+                        <p class="description">Every little detail matters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding gallery-section" id="gallery">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <p class="section-subtitle">OUR INSPIRATION</p>
+                <h2 class="section-title">Event <span class="gold-text">Gallery</span></h2>
+                <p class="description">A glimpse of the experiences we aim to create.</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4 gallery-item reveal">
+                    <img class="gallery-img" src="images/marriage.avif" alt="Wedding gallery" onclick="openImage(this)">
+                </div>
+                <div class="col-md-4 gallery-item reveal">
+                    <img class="gallery-img" src="images/about_img.avif" alt="Event gallery" onclick="openImage(this)">
+                </div>
+                <div class="col-md-4 gallery-item reveal">
+                    <img class="gallery-img" src="images/birthday.avif" alt="Birthday gallery" onclick="openImage(this)">
+                </div>
+                <div class="col-md-4 gallery-item reveal">
+                    <img class="gallery-img" src="images/party.avif" alt="Reception gallery" onclick="openImage(this)">
+                </div>
+                <div class="col-md-4 gallery-item reveal">
+                    <img class="gallery-img" src="images/private party.avif" alt="Party gallery" onclick="openImage(this)">
+                </div>
+                <div class="col-md-4 gallery-item reveal">
+                    <img class="gallery-img" src="images/corporate_img.avif" alt="Corporate gallery" onclick="openImage(this)">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <button class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="popupImage" src="" class="img-fluid" alt="Selected event">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section-padding" id="packages">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <p class="section-subtitle">OUR PLANS</p>
+                <h2 class="section-title">EVENT <span class="gold-text">Packages</span> </h2>
+                <p class="description">Choose a starting package and customize your celebration.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="package-card">
+                        <h3>Basic</h3>
+                        <p class="gold-text">Essential Celebration</p>
+                        <h2 class="my-4">Custom Quote</h2>
+                        <ul>
+                            <li>Basic Event Planning</li>
+                            <li>Simple Decorations</li>
+                            <li>Event Coordination</li>
+                            <li>Budget Consultation</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-gold">ENQUIRE NOW</a>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="package-card">
+                        <h3 class="gold-text">Premium</h3>
+                        <p class="gold-text">Elegant Experience</p>
+                        <h2 class="my-4">Custom Quote</h2>
+                        <ul>
+                            <li>Theme Based Decoration</li>
+                            <li>Stage Setup</li>
+                            <li>Photography Coordination</li>
+                            <li>Complete Event Planning</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-gold">ENQUIRE NOW</a>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="package-card">
+                        <h3>Luxury</h3>
+                        <p class="gold-text">Grand Celebration</p>
+                        <h2 class="my-4">Custom Quote</h2>
+                        <ul>
+                            <li>Luxury Theme Decoration</li>
+                            <li>Premium Stage Design</li>
+                            <li>Full Event Management</li>
+                            <li>Personalized Coordination</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-gold">ENQUIRE NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <p class="section-subtitle text-white">LET'S CELEBRATE TOGETHER</p>
+        <h2 class="display-3 mb-4">Let's Make Your Special Day More Memorable!</h2>
+        <p class="mb-4">Your dream event deserves beautiful planning.</p>
+        <a href="#contact" class="btn btn-gold">GET A FREE QUOTATION</a>
+    </section>
+    <section class="section-padding contact-section" id="contact">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <p class="section-subtitle">GET IN TOUCH</p>
+                <h2 class="section-title">Book your <span class="gold-text">Event</span> </h2>
+                <p class="description">Tell us about your upcoming celebration.</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5 reveal">
+                    <h3 class="mb-4">Let's Discuss Your Event</h3>
+                    <p class="description">We would love to hear about your ideas. Contact JP EVENTS for quotations and customized event planning.</p>
+                    <div class="mt-4">
+                        <p><i class="bi bi-geo-alt gold-text me-3"></i>Hyderabad, Telangana, India </p>
+                        <p><i class="bi bi-whatsapp gold-text me-3"></i>+91 8309554952</p>
+                        <p><i class="bi bi-envelope gold-text me-3"></i>pullurijaiprakash1289@gmail.com</p>
+                        <p><i class="bi bi-calendar-event gold-text me-3"></i>• Weddings • Parties • Corporate</p>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <form id="eventForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Your Name *</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Mobile Number *</label>
+                                <input type="tel" class="form-control" id="mobile" placeholder="10 digit mobile number" pattern="[6-9][0-9]{9}" maxlength="10" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Event Type *</label>
+                                <select class="form-select" id="eventType" required>
+                                    <option value="">Select Event</option>
+                                    <option>Wedding</option>
+                                    <option>Birthday Party</option>
+                                    <option>Engagement</option>
+                                    <option>Corporate Event</option>
+                                    <option>Baby Shower</option>
+                                    <option>Traditional Function</option>
+                                    <option>Private Party</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Estimated Budget</label>
+                                <select class="form-select" id="budget">
+                                    <option value="">Select Budget</option>
+                                    <option>Below ₹25,000</option>
+                                    <option>₹25,000 - ₹50,000</option>
+                                    <option>₹50,000 - ₹1,00,000</option>
+                                    <option>₹1,00,000 - ₹5,00,000</option>
+                                    <option>Above ₹5,00,000</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Event Date</label>
+                                <input type="date" class="form-control" id="eventDate">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Event Location</label>
+                                <input type="text" class="form-control" id="location" placeholder="Enter event location">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Tell Us About Your Event</label>
+                                <textarea  class="form-control" id="message" rows="4" placeholder="Describe your requirements..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-gold w-100">
+                                    <i class="bi bi-whatsapp me-2"></i>SEND ENQUIRY ON WHATSAPP
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <P class="small text-muted mt-3">Your enquiry will open in WhatsApp for you to send.</P>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h3>JP EVENTS</h3>
+                    <p class="small mt-3">Creating Memories That Last. Your trusted events management partner in Hyderabad.</p>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <div class="footer-link">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#packages">Packages</a>
+                    <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Our Services</h5>
+                    <div class="footer-link">
+                    <a href="#services">Wedding Events</a>
+                    <a href="#services">Birthday parties</a>
+                    <a href="#services">Baby shower</a>
+                    <a href="#services">Corporate Events</a>
+                    <a href="#services">Engagements</a>
+                    <a href="#services">Private Parties</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Contact</h5>
+                    <p class="small"><i class="bi bi-geo-alt gold-text me-2" ></i>Hyderabad, Telangana, India</p>
+                    <p class="small"><i class="bi bi-telephone gold-text me-2"></i><a href="tel:+918309554952">+91 8309554952</a></p>
+                    <p class="small"><i class="bi bi-envelope gold-text me-2"></i><a href="mailto:pullurijaiprakash1289@gmail.com">pullurijaiprakash1289@gmail.com</a></p>
+                    <a href="#contact" class="btn btn-outline-light mt-2">CONTACT US</a>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5">
+            <div class="text-center small">© <span id="year"></span> JP EVENTS. All Rights Reserved.</div>
+        </div>
+    </footer>
+    <a href="https://wa.me/918309554952?text=Hello%20JP%20Events,%20I%20want%20to%20plan%20an%20event." class="whatsapp-float" target="_blank" aria-label="Whatsapp JP Events"><i class="bi bi-whatsapp"></i></a>
+    <script>
+        document.getElementById("year").textContent=new Date().getFullYear();
+        function openImage(image){
+            document.getElementById("popupImage").src=image.src;
+            const modal = new bootstrap.Modal(document.getElementById("imageModal"));
+            modal.show();
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("active");
+                }
+            });
+        },{threshold: 0.12});
+        document.querySelectorAll(".reveal").forEach(element => {
+            observer.observe(element);
+        });
+        document.querySelectorAll(".navbar-nav .nav-link").forEach(link =>{
+            link.addEventListener("click", () =>{
+                const nav=document.getElementById("navbarNav");
+                const bsCollapse = bootstrap.Collapse.getInstance(nav);
+                if(bsCollapse){
+                    bsCollapse.hide();
+                }
+            });
+        });
+        document.getElementById("eventForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            const name=document.getElementById("name").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const eventType = document.getElementById("eventType").value;
+            const budget = document.getElementById("budget").value;
+            const date = document.getElementById("eventDate").value;
+            const location = document.getElementById("location").value.trim();
+            const message = document.getElementById("message").value.trim();
+            if(!/^[6-9][0-9]{9}$/.test(mobile)){
+                alert("Please enter a valid 10-digit Indian mobile number.");
+                return;
+            }
+            const whatsappNumber = "918309554952";
+            const enquiry = ` 
+            *NEW EVENT ENQUIRY - JP EVENTS* 
+            Name : ${name}
+            Mobile: ${mobile}
+            Event Type: ${eventType}
+            Budget: ${budget || "Not specified"}
+            Event Date: ${date || "Not specified"}
+            Location: ${location || "Not specified"}
+            *Requirements:*
+            ${message || "Not specified"}
+            Thank you!
+            JP EVENTS
+            `;
+            const encodedMessage = encodeURIComponent(enquiry);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, "_blank");
+        });
+        function sendServiceEnquiry(serviceName){
+            const whatsappNumber="918309554952";
+            const messages={
+                "Wedding":"Hello JP EVENTS! I am interested in planning a Wedding Event. Please share your wedding decoration, stage setup, catering and event management packages.",
+                "Birthday Party" : "Hello JP EVENTS! I want to organize a Birthday Party. Please share your birthday themes, decoration options and packages.",
+                "Corporate Event": "Hello JP EVENTS! I am interested in organizing a Corporate Event.Please share your corporate event planning, conference and decoration packages.",
+                "Traditional Function" : "Hello JP EVENTS! I want to organize a Traditional Function. Please share your traditional decoration and event management packages.",
+                "Private Party": "Hello JP EVENTS! I want to organize a private party. Please share your party decoration, entertainment and event packages."
+            };
+            const message=messages[serviceName];
+            if(!message){
+                alert("Invalid event selection.");
+                return;
+            }
+            const whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+</body>
+</html>
